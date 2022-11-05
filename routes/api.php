@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//USER POST ROUTES
+//route for sending data to database using Store Function in UserController
+Route::post('/signups', [UserController::class, 'postSignup'])->name('user.signups');

@@ -65,7 +65,7 @@
 </div>
 
 <div class="container features">
-  <h2><strong>Our Most Selled Products</strong></h2>
+  <h2><strong>Top Brands</strong></h2>
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-12">
             <h3 class="feature-title"><strong>World Balance</strong></h3>
@@ -100,7 +100,8 @@
   </dl>     
 </div>
 
-        </div>
+</div>
+
 <div class="col-lg-4 col-md-4 col-sm-12">
         <h3 class="feature-title"><strong>Puma  </strong></h3>
             <img src="images/icon3.jpg" class="img-circle" alt="Cinque Terre" width="306" height="236"> 
@@ -112,9 +113,8 @@
     </div>
 </div>
 
-<div class="container">
+<!-- <div class="container">
   <h2><i class="fa fa-line-chart" aria-hidden="true"></i>Nike's Top Selling Items</h2>
-  <!-- <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>             -->
   <table class="table">
     <thead>
       <tr>
@@ -196,7 +196,7 @@
       </tr>
     </tbody>
   </table>
-</div>
+</div> -->
 
 <script src="js/jquery-3.5.1.min.js"></script> 
 <script src="js/bootstrap.min.js"></script>
