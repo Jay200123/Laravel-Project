@@ -39,7 +39,7 @@ class UserController extends Controller
             'name' => $request->input('fname').' '.$request->lname,
               'email' => $request->input('email'),
               'password' => bcrypt($request->input('password')),
-              'role' => $request->input('role').''.$request->role='customer'
+              'role' => $request->input('role').''.$request->role = 'customer'
           ]);
           $user->save();
 
@@ -54,7 +54,7 @@ class UserController extends Controller
         ]);
 
          $customer = new Customer();
-         $customer->user_id = $user->user_id;
+         $customer->user_id = $user->id;
          $customer->fname = $request->fname;
          $customer->lname = $request->lname;
          $customer->address = $request->address;
