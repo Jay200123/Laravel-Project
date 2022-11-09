@@ -18,7 +18,7 @@
       </div><br />
       
     @endif
-      <form method="userform" action="#" enctype ="multipart/form-data">
+      <form method="uform" action="#" enctype ="multipart/form-data">
         @csrf
           <div class="form-group">
               @csrf

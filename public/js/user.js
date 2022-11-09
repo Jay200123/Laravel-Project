@@ -32,3 +32,39 @@ $.ajax({
     }
 
 });
+
+$("#userSubmit").on("click", function(e){
+    e.preventDefault();
+    var data = $("#uform")[0];
+    console.log(data);
+
+    let formData = newFormData(data);
+
+    console.log(formData);
+    for (var pair of formData.entries()){
+        console.log(pair[0] + ',' + pair[1]);
+
+        var $itablee =
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "/api/signups",
+        data:formData,
+        contentType: false,
+        processData: false,
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+        dataType:"json",
+
+        success:function(data){
+            console.log(data);
+            //message for Successful User Registration
+            console.log("customer successfuly recorded");
+
+        },
+
+        error:function(error){
+            console.log(error)
+        }
+    })
+});
