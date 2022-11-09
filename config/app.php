@@ -209,6 +209,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        'role' => \App\Http\Middleware\Role::class,
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 

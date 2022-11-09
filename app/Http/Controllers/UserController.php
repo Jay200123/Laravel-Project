@@ -7,6 +7,7 @@ use App\Models\Customer;
 use App\Models\User;
 use Nette\Utils\Random;
 use Storage;
+use Auth;
 
 class UserController extends Controller
 {
@@ -21,12 +22,11 @@ class UserController extends Controller
     public function getSignup(){
 
         //route for redirecting to signup views
-        return views('user.signup');
+        return view('user.signup');
 
     }
 
     //sending data to database through POST METHOD
-
     //POST Method for Customer Sign Up
     public function postSignup(Request $request){
 
@@ -67,11 +67,25 @@ class UserController extends Controller
          $customer->customer_image = 'images/' . time() . '-' . $files->getClientOriginalName();
 
          $customer->save();
-
+         Auth::login($user);
          $data = array('status' => 'saved');
         Storage::put('images/' . time() . '-' . $files->getClientOriginalName(), file_get_contents($files));
 
         return response()->json(["success" => "User Registered Successfully.", "customer" => $customer, "status" => 200]);
+
+    }
+
+    //Customer Profile
+    public function getProfile(){
+        
+        $customers = Customer::where('user_id', Auth::id())->get();
+       return response()->json($customers);
+    }
+
+    //Redirects User to Sign In Page
+    public function getSignin(){
+
+        return view('user.signin');
 
     }
 }

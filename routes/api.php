@@ -22,3 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //USER POST ROUTES
 //route for sending data to database using Store Function in UserController
 Route::post('/signups', [UserController::class, 'postSignup'])->name('user.signups');
+
+
+//Routes for Customer User Profile
+Route::get('/profile', [UserController::class, 'getProfile'])->name('user.profile');
